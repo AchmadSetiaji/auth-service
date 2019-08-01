@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}\\index.js",
+            "env": {
+                "NODE_ENV" : "development",
+                "JWT_SECRET" : "addjsonwebtokensecretherelikeQuiscustodietipsoscustodes",
+                "MONGO_DB_NAME" : "auth-with-jwts",
+                "URL_ISSUER" : "https://scotch.io",
+                "MONGO_LOCAL_CONN_URL" : "mongodb://admin:admin1234@cluster1-shard-00-00-lbxsr.mongodb.net:27017,cluster1-shard-00-01-lbxsr.mongodb.net:27017,cluster1-shard-00-02-lbxsr.mongodb.net:27017/auth-servicedb?ssl=true&replicaSet=Cluster1-shard-0&authSource=admin&retryWrites=true&w=majority"
+            }
+        }
+    ]
+}
