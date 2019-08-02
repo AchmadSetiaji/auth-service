@@ -10,5 +10,5 @@ module.exports = (router) => {
 
     // Get Token with user detail
     router.route('/token')
-        .post(controller.login);
+        .post(controller.loginToken);
 };

@@ -18,6 +18,23 @@ const userSchema = new Schema({
         type: 'String',
         required: true,
         trim: true
+    },
+    accountNumber: {
+        type: 'String',
+        required: true,
+        trim: true,
+        unique: true
+    },
+    emailAddress : {
+        type: 'String',
+        trim: true,
+        unique: true
+    },
+    identityNumber : {
+        type: 'String',
+        required: true,
+        trim: true,
+        unique: true
     }
 });
 

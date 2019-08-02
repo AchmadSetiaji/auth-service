@@ -13,7 +13,12 @@ module.exports = {
             if (!err) {
                 const name = req.body.name;
                 const password = req.body.password;
-                const user = new User({ name, password });
+                const accountNumber = req.body.accountNumber;
+                const emailAddress = req.body.emailAddress;
+                const identityNumber = req.body.identityNumber;
+
+                const user = 
+                new User({ name, password, accountNumber, emailAddress, identityNumber });
                 
                 user.save((err, user) => {
                     if (!err) {
@@ -35,7 +40,7 @@ module.exports = {
         });
     },
 
-    login: (req, res) => {
+    loginToken: (req, res) => {
         const { name, password } = req.body;
 
         mongoose.connect(connUri, { useNewUrlParser: true }, (err) => {
