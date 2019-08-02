@@ -13,8 +13,8 @@ module.exports = {
             if (!err) {
                 const name = req.body.name;
                 const password = req.body.password;
-                const user = new User({ name, password }); // document = instance of a model
-                // TODO: We can hash the password here before we insert instead of in the model
+                const user = new User({ name, password });
+                
                 user.save((err, user) => {
                     if (!err) {
                         result.status = status;
@@ -44,7 +44,7 @@ module.exports = {
             if (!err) {
                 User.findOne({ name }, (err, user) => {
                     if (!err && user) {
-                        // We could compare passwords in our model instead of below
+                        
                         bcrypt.compare(password, user.password).then(match => {
                             if (match) {
                                 status = 200;
@@ -92,9 +92,7 @@ module.exports = {
             let status = 200;
             if (!err) {
                 const payload = req.decoded;
-                // TODO: Log the payload here to verify that it's the same payload
-                //  we used when we created the token
-                // console.log('PAYLOAD', payload);
+                
                 if (payload && payload.user === 'admin') {
                     User.find({}, (err, users) => {
                         if (!err) {

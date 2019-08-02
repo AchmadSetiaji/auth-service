@@ -3,7 +3,7 @@ require('dotenv').config(); // Sets up dotenv as soon as our application starts
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const routes = require('./routes/index.js');
+const routes = require('./src/routes/index.js');
 
 const app = express();
 const router = express.Router();
