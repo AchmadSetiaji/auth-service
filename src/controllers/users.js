@@ -3,7 +3,8 @@ const User = require('../models/users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const redis = require('redis');
-const redisClient = redis.createClient(6379)
+const redisHost = process.env.REDIS_HOST;
+const redisClient = redis.createClient(redisHost);
 const connUri = process.env.MONGO_LOCAL_CONN_URL;
 const urlIssuer = process.env.URL_ISSUER;
 
