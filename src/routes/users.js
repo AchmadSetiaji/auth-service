@@ -9,6 +9,6 @@ module.exports = (router) => {
         .get(validateToken, controller.getAll); 
 
     // Get Token with user detail
-    router.route('/token')
-        .post(controller.loginToken);
+    router.route('/request-token')
+        .post(controller.requestToken);
 };
